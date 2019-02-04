@@ -47,3 +47,22 @@ diamonds %>%
 diamonds %>% 
     group_by(cut, color) %>% 
     summarize(AvgPrice=mean(price), TotalSize=sum(carat))
+
+diamonds %>% 
+    select(carat, price, cut) %>% 
+    filter(carat > 1) %>% 
+    group_by(cut) %>% 
+    summarize(AvgPrice=mean(price), TotalSize=sum(carat)) %>% 
+    arrange(AvgPrice)
+
+arrange(
+    summarize(
+        group_by(
+            filter(
+                select(
+                    diamonds, carat, price, cut), 
+                carat > 1), 
+            cut), 
+        AvgPrice=mean(price), TotalSize=sum(carat)), 
+    AvgPrice
+)
