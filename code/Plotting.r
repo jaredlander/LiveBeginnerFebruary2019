@@ -48,3 +48,13 @@ ggplot(diamonds, aes(x=carat, y=price)) +
     geom_smooth(aes(color=cut)) + 
     facet_wrap( ~ cut) +
     theme(legend.position='none')
+
+
+ggplot(diamonds, aes(x=price)) + geom_histogram()
+ggplot(diamonds, aes(x=price)) + geom_histogram(bins=10)
+ggplot(diamonds, aes(x=price)) + geom_histogram(bins=30)
+ggplot(diamonds, aes(x=price)) + geom_histogram(bins=70)
+ggplot(diamonds, aes(x=price)) + geom_histogram(bins=150)
+
+ggplot(diamonds, aes(x=price)) + geom_histogram(bins=25, aes(color=cut))
+ggplot(diamonds, aes(x=price)) + geom_histogram(bins=25, aes(fill=cut))
