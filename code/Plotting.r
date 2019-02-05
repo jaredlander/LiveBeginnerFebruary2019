@@ -30,3 +30,21 @@ ggplot(diamonds, aes(x=carat, y=price)) +
     geom_point(shape=1, size=1, aes(color=cut)) +
     geom_smooth() +
     geom_smooth(aes(color=cut))
+
+ggplot(diamonds, aes(x=carat, y=price)) + 
+    geom_point(shape=1, size=1, aes(color=cut), alpha=1/3) +
+    geom_smooth() +
+    geom_smooth(aes(color=cut))
+
+ggplot(diamonds, aes(x=carat, y=price)) + 
+    geom_point(shape=1, size=1, aes(color=cut), alpha=1/3) +
+    geom_smooth() +
+    geom_smooth(aes(color=cut)) + 
+    facet_wrap( ~ cut)
+
+ggplot(diamonds, aes(x=carat, y=price)) + 
+    geom_point(shape=1, size=1, aes(color=cut), alpha=1/3) +
+    geom_smooth() +
+    geom_smooth(aes(color=cut)) + 
+    facet_wrap( ~ cut) +
+    theme(legend.position='none')
