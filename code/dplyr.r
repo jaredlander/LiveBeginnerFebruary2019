@@ -66,3 +66,13 @@ arrange(
         AvgPrice=mean(price), TotalSize=sum(carat)), 
     AvgPrice
 )
+
+
+diamonds
+
+diamondColors <- readr::read_csv('data/DiamondColors.csv')
+
+diamondColors
+
+diamondJoin <- left_join(diamonds, diamondColors, by=c('color'='Color'))
+diamondJoin
