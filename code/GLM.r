@@ -17,3 +17,10 @@ coefplot(time3, sort='magnitude')
 
 AIC(time1, time2, time3)
 BIC(time1, time2, time3)
+
+table(tips$size)
+
+size1 <- glm(size ~ total_bill + day + time, data=tips, family=poisson)
+coefplot(size1, sort='magnitude')
+
+predict(model, newdata=new_data)
